@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{% block title %}欢迎访问博客{% endblock %}</h1>
+
+  {% if posts %}
+    {% for post in posts %}
+      <a href="{{ url_for('post', post_id=post['id']) }}">
+        <h2>{{ post['title'] }}</h2>
+      </a>
+      <div class="d-flex align-items-center" style="gap: 1rem;">
+        <span class="badge bg-primary mb-0">{{ post['created'] }}</span>
+        <a href="{{ url_for('edit', post_id=post['id']) }}">
+          <span class="badge badge-warning">编辑</span>
+        </a>
+        <form action="{{ url_for('delete', post_id=post['id']) }}" method="POST" class="d-inline mb-0">
+          <button type="submit"
+                  class="badge bg-danger border-0"
+                  style="cursor: pointer;"
+                  onclick="return confirm('确定要删除吗?')">
+            删除
+          </button>
+        </form>
+      </div>
+      <hr>
+    {% endfor %}
+  {% else %}
+    <div class="text-center mt-5">
+      <p class="text-muted">📭 暂无文章，快去发布第一篇博客吧！</p>
+    </div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container" style="max-width: 700px; margin: 0 auto;">
+  <p class="text-center">欢迎使用本博客系统，这是一个简洁易用的文章发布平台。</p>
+
+  <h4>🔧 功能概述</h4>
+  <ul>
+    <li>✍️ <strong>文章发布</strong>：支持在线创建新文章，包括标题与内容填写。</li>
+    <li>📂 <strong>文章列表</strong>：首页展示所有已发布文章，按时间排序。</li>
+    <li>🔍 <strong>文章查看</strong>：点击标题可查看完整文章内容。</li>
+    <li>🛠️ <strong>文章编辑</strong>：可对已发布文章进行修改。</li>
+    <li>🗑️ <strong>文章删除</strong>：支持删除不需要的文章，带确认提示。</li>
+    <li>💾 <strong>SQLite 数据库存储</strong>：数据持久化存储文章信息。</li>
+    <li>🌐 <strong>Flask 框架开发</strong>：基于 Python 的 Web 应用，结构清晰。</li>
+  </ul>
+
+  <h4>💡 技术栈</h4>
+  <ul>
+    <li><strong>前端</strong>：HTML + Bootstrap（美观简洁）</li>
+    <li><strong>后端</strong>：Flask（轻量 Python Web 框架）</li>
+    <li><strong>数据库</strong>：SQLite（零配置、轻量级数据库）</li>
+  </ul>
+
+  <h4>✅ 适用场景</h4>
+  <ul>
+    <li>初学者练习 Flask 或 Web 开发</li>
+    <li>简易个人博客系统</li>
+    <li>内部文章管理工具原型</li>
+  </ul>
+</div>
+{% endblock %}
